@@ -27,3 +27,4 @@ gradlew.bat
 *.log
 *.tmp
 /bin/
+/target/
