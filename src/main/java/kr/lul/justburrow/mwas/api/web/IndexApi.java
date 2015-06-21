@@ -2,6 +2,7 @@ package kr.lul.justburrow.mwas.api.web;
 
 import kr.lul.justburrow.mwas.Application;
 import kr.lul.justburrow.mwas.api.web.IndexApi.C;
+import kr.lul.justburrow.mwas.api.web.view.IndexView;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,5 +46,5 @@ public interface IndexApi {
    * @return
    */
   @RequestMapping(C.INDEX)
-  public String index();
+  public IndexView index();
 }
