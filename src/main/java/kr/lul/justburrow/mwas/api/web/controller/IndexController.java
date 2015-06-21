@@ -1,19 +1,46 @@
 package kr.lul.justburrow.mwas.api.web.controller;
 
 import kr.lul.justburrow.mwas.api.web.IndexApi;
-import kr.lul.justburrow.mwas.api.web.view.IndexView;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-class IndexController implements IndexApi {
-  // //////////////////////////////////////////////////////////////////////////////////////////////
-  // <I>IndexApi
-  // //////////////////////////////////////////////////////////////////////////////////////////////
-  @Override
-  public IndexView index() {
-    IndexView view = new IndexView();
-    view.setTimestampUtc(System.currentTimeMillis());
-    return view;
+/**
+ * @author JB 2015/06/21
+ */
+@RequestMapping(IndexApi.API_GROUP)
+public interface IndexController extends IndexApi {
+  /**
+   * HTML 템플릿 정보.
+   *
+   * @author JB 2015/06/21
+   */
+  public static final class Template {
+    public static final String DIRECTORY = "index";
+
+    public static final String INDEX     = Template.DIRECTORY + "/index";
+
+    private Template() {
+    }
   }
+
+  /**
+   * 템플릿에 넘겨줄 모델 어트리뷰트.
+   *
+   * @author JB 2015/06/21
+   */
+  public static final class M {
+    public static final String TIMESTAMP = "timestamp";
+
+    private M() {
+    }
+  }
+
+  /**
+   * @author JB 2015/06/21
+   * @param mav
+   * @return
+   */
+  @RequestMapping(IndexApi.INDEX)
+  public ModelAndView index(ModelAndView mav);
 }
