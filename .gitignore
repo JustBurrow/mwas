@@ -16,6 +16,7 @@ gradle-app.setting
 /.project
 /.classpath
 /.settings/
+.springBeans
 
 # Gradle
 /gradle

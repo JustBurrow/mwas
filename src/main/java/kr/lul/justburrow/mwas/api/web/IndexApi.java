@@ -14,18 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(C.API)
 public interface IndexApi {
   /**
-   * 뷰 상수.
-   *
-   * @author JB 2015/06/20
-   */
-  public static final class V {
-    public static final String INDEX = "index";
-
-    private V() {
-    }
-  }
-
-  /**
    * 컨트롤러 상수.
    *
    * @author JB 2015/06/20
