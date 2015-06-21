@@ -11,6 +11,7 @@ class IndexControllerImpl implements IndexController {
   @Override
   public ModelAndView index(ModelAndView mav) {
     mav.setViewName(Template.INDEX);
+    mav.addObject(M.TIMESTAMP, System.currentTimeMillis());
     return mav;
   }
 }

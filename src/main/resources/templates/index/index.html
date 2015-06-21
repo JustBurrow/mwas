@@ -8,7 +8,16 @@
   <h1>WELCOME</h1>
   <p>Welcome to HELL!!!</p>
   <footer>
-    <p>UTC ms : <span th:text="${timestamp}">UTC TIMESTAMP</span></p>
+    Timestamp
+    <dl th:with="timezone=${T(java.time.ZoneId).of('Asia/Tokyo')},
+        instant=${T(java.time.Instant).ofEpochMilli(timestamp)}">
+      <dt>UTC ms</dt>
+      <dd th:text="${timestamp}">UTC TIMESTAMP</dd>
+      <dt>Instant</dt>
+      <dd th:text="${instant}">instant</dd>
+      <dt>ZoneDateTime</dt>
+      <dd th:text="${instant.atZone(timezone)}">zone date time</dd>
+    </dl>
   </footer>
 </body>
 </html>
