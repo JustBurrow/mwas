@@ -31,6 +31,7 @@ public interface IndexController extends IndexApi {
    */
   public static final class M {
     public static final String TIMESTAMP = "timestamp";
+    public static final String BOOT_LOG  = "bootLog";
 
     private M() {
     }

@@ -27,5 +27,6 @@ gradlew.bat
 # General
 *.log
 *.tmp
+*.bak
 /bin/
 /target/

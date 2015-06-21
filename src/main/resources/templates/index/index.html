@@ -8,6 +8,7 @@
   <h1>WELCOME</h1>
   <p>Welcome to HELL!!!</p>
   <footer>
+    <section>
     Timestamp
     <dl th:with="timezone=${T(java.time.ZoneId).of('Asia/Tokyo')},
         instant=${T(java.time.Instant).ofEpochMilli(timestamp)}">
@@ -18,6 +19,10 @@
       <dt>ZoneDateTime</dt>
       <dd th:text="${instant.atZone(timezone)}">zone date time</dd>
     </dl>
+    </section>
+    <section>
+      Boot log : <span th:text="${bootLog}">current boot log</span>
+    </section>
   </footer>
 </body>
 </html>
